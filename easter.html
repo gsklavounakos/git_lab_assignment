@@ -11,19 +11,20 @@
     
     <div class="egg" onclick="alert('You found a chocolate egg! 🍫')"></div>
     <div class="egg" onclick="document.getElementById('secretBunny').style.display='block'"></div>
-    <div class="egg" onclick="this.style.background='rainbow'"></div>
+    <div class="egg" onclick="this.style.background='linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)'"></div>
 
     <p class="hidden-basket">🧺 Secret Easter Basket Found! 🧺</p>
     
     <div id="secretBunny">🐰</div>
 
     <script>
-        // Easter egg: Konami code reveals rainbow background
+        // Easter egg: cheat code for Mega Jump in GTA San Andreas reveals rainbow background
         let keys = [];
         document.addEventListener('keydown', (e) => {
             keys.push(e.key);
-            if (keys.join(',').includes('ArrowUp,ArrowUp,ArrowDown,ArrowDown')) {
-                document.body.style.background = 'linear-gradient(45deg, red,orange,yellow,green,blue,indigo,violet)';
+            if (keys.slice(-8).join(',') === 'ArrowUp,ArrowUp,t,t,ArrowUp,ArrowUp,ArrowLeft,ArrowRight,s,r,r') {
+                const eggs = document.querySelectorAll('.egg');
+                eggs[2].style.background = 'linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)';
             }
         });
     </script>
