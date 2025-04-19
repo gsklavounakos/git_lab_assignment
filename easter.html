@@ -11,19 +11,25 @@
     
     <div class="egg" onclick="alert('You found a chocolate egg! 🍫')"></div>
     <div class="egg" onclick="document.getElementById('secretBunny').style.display='block'"></div>
-    <div class="egg" onclick="this.style.background='rainbow'"></div>
+    <div class="egg" onclick="this.style.background='linear-gradient(to right, blue, orange)'"></div>
+    
+    <div class="egg" style="background-color: red;" onclick="alert('You found a red egg! 🔴')"></div>
+    <div class="egg" style="background-color: darkgreen;" onclick="alert('You found a green egg! 🟢')"></div>
+    <div class="egg" style="background-color: darkgreen;" onclick="alert('You found a green egg! 🟢')"></div>
+    <div class="egg" style="background-color: yellow;" onclick="alert('You found a yellow egg! 🟡')"></div>
 
-    <p class="hidden-basket">🧺 Secret Easter Basket Found! 🧺</p>
+    <p class="hidden-basket">🕯 Secret Easter Candle Found! 🕯</p>
     
     <div id="secretBunny">🐰</div>
 
     <script>
-        // Easter egg: Konami code reveals rainbow background
+        // Easter egg: cheat code for Mega Jump in GTA San Andreas reveals rainbow background
         let keys = [];
         document.addEventListener('keydown', (e) => {
-            keys.push(e.key);
-            if (keys.join(',').includes('ArrowUp,ArrowUp,ArrowDown,ArrowDown')) {
-                document.body.style.background = 'linear-gradient(45deg, red,orange,yellow,green,blue,indigo,violet)';
+            keys.push(e.key.toLowerCase());
+            if (keys.slice(-11).join(',') === 'arrowup,arrowup,t,t,arrowup,arrowup,arrowleft,arrowright,s,r,r') {
+                const eggs = document.querySelectorAll('.egg');
+                eggs[2].style.background = 'linear-gradient(to right, blue, orange)';
             }
         });
     </script>
