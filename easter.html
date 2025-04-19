@@ -11,7 +11,7 @@
     
     <div class="egg" onclick="alert('You found a chocolate egg! 🍫')"></div>
     <div class="egg" onclick="document.getElementById('secretBunny').style.display='block'"></div>
-    <div class="egg" onclick="this.style.background='linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)'"></div>
+    <div class="egg" onclick="this.style.background='linear-gradient(to right, blue, orange)'"></div>
     
     <div class="egg" style="background-color: red;" onclick="alert('You found a red egg! 🔴')"></div>
     <div class="egg" style="background-color: blue;" onclick="alert('You found a blue egg! 🔵')"></div>
@@ -29,7 +29,7 @@
             keys.push(e.key);
             if (keys.slice(-8).join(',') === 'ArrowUp,ArrowUp,t,t,ArrowUp,ArrowUp,ArrowLeft,ArrowRight,s,r,r') {
                 const eggs = document.querySelectorAll('.egg');
-                eggs[2].style.background = 'linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)';
+                eggs[2].style.background = 'linear-gradient(to right, blue, orange)';
             }
         });
     </script>
